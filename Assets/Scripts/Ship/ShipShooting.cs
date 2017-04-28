@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Shooting2 : MonoBehaviour
+public class ShipShooting : MonoBehaviour
 {
 	public float delay = 1f;
 	// public int playerNumber = 1;

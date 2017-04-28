@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotionShip : MonoBehaviour
+public class ShipMotion : MonoBehaviour
 {
 
 
