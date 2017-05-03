@@ -7,6 +7,9 @@ public class TreasureSpawner : MonoBehaviour
 
     public float minTime = 5f;
     public float maxTime = 40f;
+	public int limit = 12;
+
+	private int spawned = 0;
 
 	private GameObject[] treasureSpawnPoints;
 
@@ -32,6 +35,15 @@ public class TreasureSpawner : MonoBehaviour
 			SpawnTreasure();
             float randTime = Random.Range(minTime, maxTime);
             yield return new WaitForSeconds(randTime);
+			while ()
+			{
+				spawnedObjects = FindGameObjectsWithTag("Treasure");
+				spawned = spawnedObjects.Length;
+				if (spawned < limit)
+				{
+					SpawnTreasure();
+				}
+			}
         }
     }
 
@@ -47,7 +59,7 @@ public class TreasureSpawner : MonoBehaviour
 			TreasureScript treasureScript = currentTreasure.GetComponent<TreasureScript>();
 			if (treasureScript != null)
 				treasureScript.ChooseRandomState();
+			
         }
     }
-
 }

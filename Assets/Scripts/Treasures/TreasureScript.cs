@@ -27,13 +27,19 @@ public class TreasureScript : MonoBehaviour
         if (other.gameObject.CompareTag("Ship"))
         {
 			allActions[(int)treasureState](other.gameObject);
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            //gameObject.GetComponent<MeshRenderer>().enabled = false;
+            //gameObject.GetComponent<BoxCollider>().enabled = false;
+			Destroy (gameObject);
         }
 		if (other.gameObject.CompareTag("Treasure"))
         {
-            Destroy(other.gameObject);
+           Destroy(other.gameObject);
         }
+
+		if (other.gameObject.CompareTag("Map"))
+		{
+			Destroy(other.gameObject);
+		}
     }
 
     private static void Heal(GameObject ship)
